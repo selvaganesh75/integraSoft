@@ -1,0 +1,50 @@
+<div class="col-lg-11 mx-auto col-md-12">
+              <div class="card">
+                <div class="card-header card-header-warning">
+                  <h4 class="card-title">User Details</h4>
+                  <p class="card-category">New employees upto today</p>
+                </div>
+                <div class="card-body table-responsive">
+
+                  
+                  
+                  <table class="table table-hover">
+                    <thead class="text-warning">
+                      <tr><th>ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th colspan="2">Country</th>
+                    </tr></thead>
+                    <tbody>
+                        {{#each userData as |value key|}}
+                            <tr>
+                                <td>{{key}}</td>
+                                <td>{{value.name}}</td>
+                                <td>{{value.email}}</td>
+                                <td>{{value.country}}</td>
+                                <td class="td-actions text-right">
+                                    <form action="editUser" method="post" style="display:inline-block">
+                                        <input type="hidden" id="userId" name = "userId" value = "{{value.user}}" />
+                                        <button type="submit" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                            <i class="material-icons">edit</i>
+                                               <div class="ripple-container"></div>
+                                        </button>
+
+                                    </form>
+                                      <form action="deleteUser" method="post" style="display:inline-block">
+                                          <input type="hidden" name = "userId" value = "{{value._id}}" />
+                                          <button type="submit" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
+                                              <i class="material-icons">close</i>
+                                           </button>
+                                      </form>
+                                      
+                            </td>
+
+                            </tr>
+                            
+                        {{/each}}                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>

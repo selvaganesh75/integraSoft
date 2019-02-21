@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base target="_parent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+     <!-- Material Kit CSS -->
+  
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="../server/assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <title>{{title}}</title>
+    <style>
+
+        html,body,iframe{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar-color{
+            background-color: #ff7900 !important;
+        }
+        .navUesr{
+            max-height: 40px;
+        }
+        .logout:hover a{
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg navUesr navbar-color fixed-top alert-warning">
+            <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <a class="navbar-brand" href="#">Welcome {{name}}...</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end text-right">               
+                <div class="logout"><a class="dropdown-item text-light" href="javascript:void(0)" id="logout" onclick="logOut()">Log out</a></div>
+            </div>
+            </div>
+      </nav>
+    </section>
+    <iframe src="{{url}}" width="100" height="100"></iframe>
+</body>
+<script src="../server/assets/js/core/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="../server/assets/js/core/popper.min.js"></script>
+  <script src="../server/assets/js/core/bootstrap-material-design.min.js"></script>
+  <script src="../server/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<script>
+    function logOut(){
+        var logOut = { url:'/logout', method:'POST',data:{logout : true} }
+       
+        ajaxCall(logOut,function(result){
+            if(result == 'ok'){
+                window.location.href = '/';
+            }
+        });
+    }
+    var ajaxCall = function(obj,callback){
+        $.ajax({
+			url: obj.url,
+			type: obj.method,
+			data: obj.data || {},
+			success: function(data){
+                callback(data);                
+			},
+			error: function(jqXHR){
+              console.log(jqXHR.responseText+' :: '+jqXHR.statusText);
+			}
+		});
+    }
+</script>
+</html>

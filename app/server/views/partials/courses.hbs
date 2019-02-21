@@ -1,0 +1,87 @@
+<div class="col-lg-10 col-md-12 mx-auto">
+              <div class="card">
+                <div class="card-header card-header-tabs card-header-primary">
+                  <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                      <span class="nav-tabs-title">Tasks:</span>
+                      <ul class="nav nav-tabs" data-tabs="tabs">
+                        <li class="nav-item">
+                          <a class="nav-link active show" href="#profile" data-toggle="tab">
+                            <i class="material-icons"> list </i> Course List
+                            <div class="ripple-container"></div>
+                          <div class="ripple-container"></div></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#messages" data-toggle="tab">
+                            <i class="material-icons"> playlist_add </i> Add Course
+                            <div class="ripple-container"></div>
+                          <div class="ripple-container"></div></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="tab-content">
+                    <div class="tab-pane active show" id="profile">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked="">
+                                  <span class="form-check-sign">
+                                    <span class="check"></span>
+                                  </span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                   
+                   
+                    
+                    <div class="tab-pane" id="messages">
+                        <form method="POST" id="addCourse">
+                            <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Course Name</label>
+                                        <input type="text" class="form-control" name="course">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                <label class="bmd-label-floating">Course level</label>
+                                    <select class="form-control" id="sel1" name='courseList'>
+                                        <option value="" data-value={{this.short}}>Please Select Course</option> 
+                                        <option value="school" data-value={{this.short}}>School level</option> 
+                                        <option value="intermediate" data-value={{this.short}}>Intermediate</option> 
+                                        <option value="corporate" data-value={{this.short}}>Corporate</option> 
+                                    </select>
+                                </div>
+                            </div>
+                                <button type="submit" onclick="homeController.addCourse(event)" class="btn btn-primary pull-right">Add Course</button>
+                            </div>
+                        </form>
+                    </div>
+                   
+                  </div>
+                  
+                 
+                </div>
+                
+              </div>
+            

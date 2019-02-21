@@ -1,0 +1,64 @@
+  <div class="row">
+            <div class="col-md-9 mx-auto">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">{{title}}</h4>
+                  <p class="card-category">Enter User Details</p>
+                </div>
+                <div class="card-body">
+                  <form id="addUser">
+                    <div class="row">
+                     <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control" name="user">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email address</label>
+                          <input type="email" class="form-control" name="email">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">User Role</label>
+                          <select class="form-control" name='role'>
+                            <option value="">Please Select Role...</option>
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Name</label>
+                          <input type="text" name="name" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Password</label>
+                          <input type="password" class="form-control" name="pass">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Country</label>
+                            <select class="form-control" id="sel1" name='country'>{{#each countries }}<option value="{{this.name}}" data-value={{this.short}}>{{this.name}}</option> {{/each}}</select>
+                          </div>
+                      </div>
+                    </div>  
+                   
+                    <button type="submit" onclick="homeController.addUser(event)" class="btn btn-primary pull-right">Add User</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>  
+         
+          </div>

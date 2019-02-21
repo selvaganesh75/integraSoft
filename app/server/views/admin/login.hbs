@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="server/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="server/css/util.css">
+	<link rel="stylesheet" type="text/css" href="server/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-85 p-b-20">
+				<form class="login100-form validate-form" method = "POST">
+					<span class="login100-form-title p-b-70">
+						{{#if error}}
+                            {{error}}
+                        {{else}}
+                            Welcome
+                        {{/if}}
+					</span>
+					<span class="login100-form-avatar">
+						<i class="material-icons" style="text-align: center; font-size: 7em; color:#9c27b0">account_circle</i>
+					</span>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
+						<input class="input100" type="text" name="user">
+						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+					<ul class="login-more p-t-190">
+						<li class="m-b-8">
+							<span class="txt1">
+								Forgot
+							</span>
+
+							<a href="#" class="txt2">
+								Username / Password?
+							</a>
+						</li>					
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="server/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="server/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="server/vendor/bootstrap/js/popper.js"></script>
+
+	<script src="server/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="server/js/main.js"></script>
+
+</body>
+</html>
