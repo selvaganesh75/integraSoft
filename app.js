@@ -30,7 +30,8 @@ process.env.DB_NAME = process.env.DB_NAME || 'node-login';
 
 if (app.get('env') != 'live'){
 	console.log('from local')
-	process.env.DB_URL = 'mongodb://'+process.env.DB_HOST+':'+process.env.DB_PORT;
+	process.env.DB_URL = `mongodb+srv://selvaganesh:${encodeURIComponent('Selva@7584')}@cluster0-y1wt4.mongodb.net/test?retryWrites=true`;
+	//process.env.DB_URL = 'mongodb://'+process.env.DB_HOST+':'+process.env.DB_PORT;
 }	else {
 	console.log('from production')
 // prepend url with authentication credentials // 
