@@ -4,6 +4,7 @@ var fs = require('fs');
 var express = require('express');
 var session = require('express-session');
 var exphbs  = require('express-handlebars');
+console.log(express)
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var MongoStore = require('connect-mongo')(session);
