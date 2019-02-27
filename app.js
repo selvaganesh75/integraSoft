@@ -13,7 +13,7 @@ var hbs = exphbs.create({helpers:{selectedCountry:function(){return 'selected'},
 
 var partialsPath = __dirname + '/app/server/views/partials/';
 app.locals.pretty = true;
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/server/views');
 app.engine('.hbs', exphbs({extname: '.hbs',layout: false,partialsDir:partialsPath}));
 app.set('view engine', '.hbs');
