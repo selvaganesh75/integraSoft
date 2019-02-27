@@ -4,6 +4,7 @@ var fs = require('fs');
 var express = require('express');
 var session = require('express-session');
 var exphbs  = require('express-handlebars');
+console.log(express)
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var MongoStore = require('connect-mongo')(session);
@@ -13,7 +14,7 @@ var hbs = exphbs.create({helpers:{selectedCountry:function(){return 'selected'},
 
 var partialsPath = __dirname + '/app/server/views/partials/';
 app.locals.pretty = true;
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/server/views');
 app.engine('.hbs', exphbs({extname: '.hbs',layout: false,partialsDir:partialsPath}));
 app.set('view engine', '.hbs');
@@ -27,11 +28,12 @@ process.env.DB_HOST = process.env.DB_HOST || 'localhost';
 process.env.DB_PORT = process.env.DB_PORT || 27017;
 process.env.DB_NAME = process.env.DB_NAME || 'node-login';
 
+
 if (app.get('env') != 'live'){
 	process.env.DB_URL = 'mongodb://'+process.env.DB_HOST+':'+process.env.DB_PORT;
 }	else {
 // prepend url with authentication credentials // 
-	process.env.DB_URL = 'mongodb://'+process.env.DB_USER+':'+process.env.DB_PASS+'@'+process.env.DB_HOST+':'+process.env.DB_PORT;
+	process.env.DB_URL = 'mongodb+srv://selvaganesh:Selva@7584@cluster0-y1wt4.mongodb.net/test?retryWrites=true';
 }
 app.use(session({
 	secret: 'faeb4453e5d14fe6f6d04637f78077c76c73d1b4',
