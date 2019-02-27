@@ -4,7 +4,6 @@ var fs = require('fs');
 var express = require('express');
 var session = require('express-session');
 var exphbs  = require('express-handlebars');
-console.log(express)
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var MongoStore = require('connect-mongo')(session);
@@ -33,7 +32,7 @@ if (app.get('env') != 'live'){
 	process.env.DB_URL = 'mongodb://'+process.env.DB_HOST+':'+process.env.DB_PORT;
 }	else {
 // prepend url with authentication credentials // 
-	process.env.DB_URL = 'mongodb+srv://selvaganesh:Selva@7584@cluster0-y1wt4.mongodb.net/test?retryWrites=true';
+	process.env.DB_URL = 'mongodb+srv://selvaganesh:Selva%407584@cluster0-y1wt4.mongodb.net/test?retryWrites=true';
 }
 app.use(session({
 	secret: 'faeb4453e5d14fe6f6d04637f78077c76c73d1b4',
